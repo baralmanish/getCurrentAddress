@@ -1,4 +1,4 @@
-# getCurrentAddress
+# Get Current address using Javascript Code
 We can use browser nagivigator to get current location.
 And using that location's latitude and longitude we invoke the openstreetmap api to get current address.
 
