@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Current Address</title>
+  </head>
+  <body>
+    <button>Get Current Address</button>
+
+    <script>
+      const button = document.querySelector("button");
+
+      button.addEventListener("click", () => {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const { latitude, longitude } = position.coords;
+          const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`;
+          fetch(url)
+            .then((res) => res.json())
+            .then((data) => {
+              console.log(data.display_name);
+              console.table(data.address);
+            })
+            .catch(() => console.error("Error on fetching data."));
+        });
+      });
+    </script>
+  </body>
+</html>
