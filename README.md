@@ -18,4 +18,5 @@ navigator.geolocation.getCurrentPosition((position) => {
 
 ## DEMO
 [Click here to see the demo](https://my-address.netlify.app)
+
 https://my-address.netlify.app
